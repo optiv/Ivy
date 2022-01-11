@@ -13,8 +13,10 @@ import (
 )
 
 type Holder struct {
+	VBAkey    string
 	Variables map[string]string
 }
+
 type JavaCode struct {
 	Variables map[string]string
 }
