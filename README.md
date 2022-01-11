@@ -7,7 +7,7 @@
 </h1>
 
 ## More Information
-If you want to learn more about the techniques utilized in this framework as well as the defensive measure to help defend against it, please take a look at [Article](). 
+If you want to learn more about the techniques utilized in this framework as well as the defensive measure to help defend against it, please take a look at [Article](https://www.optiv.com/insights/source-zero/blog/defeating-edrs-office-products). 
 #
 
 ## Description
