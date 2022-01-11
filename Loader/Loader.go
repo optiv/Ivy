@@ -13,137 +13,44 @@ import (
 )
 
 type Holder struct {
-	VBAkey    string
 	Variables map[string]string
 }
-
 type JavaCode struct {
-	objExcel            string
-	WshShell            string
-	Application_Version string
-	strRegPath          string
-	objWorkbook         string
-	shellcode           string
-	xlmodule            string
-	Variables           map[string]string
-}
-
-type VBADECODE struct {
-	hexDecodeFunction string
-	hexInput          string
-	hexI              string
-	xorFunction       string
-	xorKey            string
-	xorA              string
-	xorText           string
-	xorI              string
-	shellcode         string
-	val               string
-	Variables         map[string]string
-}
-
-type Code1 struct {
-	EncodedPayload string
-	myArray        string
-	myByte         string
-	pInfo          string
-	sNull          string
-	sProc          string
-	rwxpage        string
-	offset         string
-	res            string
-	CreateStuff    string
-	AllocStuff     string
-	WriteStuff     string
-	RunStuff       string
-	Variables      map[string]string
-}
-
-type Code2 struct {
-	EncodedPayload      string
-	shellcode           string
-	rawshellCode        string
-	shellLength         string
-	shellcode1          string
-	memoryAddress       string
-	ByteArray           string
-	zL                  string
-	rL                  string
-	Value               string
-	pos                 string
-	executeResult       string
-	splitrawshellcode32 string
-	splitrawshellcode64 string
-	allocateMemory      string
-	copyMemory          string
-	shellExecute        string
-	Variables           map[string]string
-}
-
-type EndCode struct {
-	objExcel    string
-	WshShell    string
-	strRegPath  string
-	objWorkbook string
-	xlmodule    string
-	shellcode   string
-	Auto_Open   string
-	Variables   map[string]string
-}
-
-type DecodeStarter struct {
-	xorFunction       string
-	hexDecodeFunction string
-	EncodedPayload    string
-	VBAKey            string
-	shellcode         string
-	Auto_Open         string
-	Variables         map[string]string
-}
-
-type sct struct {
-	progid    string
-	classid   string
-	payload   string
 	Variables map[string]string
 }
-
+type VBADECODE struct {
+	Variables map[string]string
+}
+type Code1 struct {
+	Variables map[string]string
+}
+type Code2 struct {
+	Variables map[string]string
+}
+type EndCode struct {
+	Variables map[string]string
+}
+type DecodeStarter struct {
+	Variables map[string]string
+}
+type sct struct {
+	Variables map[string]string
+}
 type xsl struct {
-	payload   string
 	Variables map[string]string
 }
 type HTA struct {
-	payload   string
 	Variables map[string]string
 }
-
 type stagless_decryption struct {
-	b64payload string
-	b64key     string
-	shellcode  string
-	Variables  map[string]string
-}
-
-type macro struct {
-	HTTPReq    string
-	t          string
-	remoteFile string
-	storeIn    string
-	pathOfFile string
-	obj        string
-	Full       string
-	sleep      string
-	Variables  map[string]string
-}
-
-type sandbox struct {
-	domain    string
-	proc      string
-	WSHShell  string
-	objShell  string
 	Variables map[string]string
 }
-
+type macro struct {
+	Variables map[string]string
+}
+type sandbox struct {
+	Variables map[string]string
+}
 var buffer bytes.Buffer
 
 //First
