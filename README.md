@@ -154,11 +154,9 @@ In addition, when generating a loader there are two payload types. The first, `I
 
 With `Inject` mode Ivy will create a process in a suspended state to injection shellcode into. Depending on the on weither its a 32-bit or 64-bit system it will spawn a different process. Ivy comes with some default process names to spawn, however these can be chagned by using the `process32` or `process64` flags. When specifying the path ensure you use `\\` for the path.
 
+# Staged vs Stageless Shellcode
 
-### Staged vs Stageless
-
-First of all, YOU SHOULD ALWAYS USE the ```-stageless``` argument. However, if you ever need to run a staged payload you can do so by not using the `-stageless` argument.  In addition, when you choose to run a staged payload it is important that for `Inject` payload types the shellcode must be VBA formatted and for `Local` types the shellcode be C formatted.
-
+First of all, YOU SHOULD ALWAYS USE the ```-stageless``` argument. However, if you ever need to run a staged payload you can do so by not using the `-stageless` argument. When using the `-stageless` you can use raw shellcode, however, when you choose to run a staged payload it is important that for `Inject` payload types the shellcode must be VBA formatted and for `Local` types the shellcode be C formatted.
 
 
 # Delivery 
