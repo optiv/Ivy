@@ -403,7 +403,7 @@ func XSL_Code_Buff(compiled string) string {
 	xsl.Variables = make(map[string]string)
 	xsl.Variables["payload"] = compiled
 	buffer.Reset()
-	xslTemplate, err := template.New("xsl").Parse(Struct.HTA_Loader())
+	xslTemplate, err := template.New("xsl").Parse(Struct.XSL_Loader())
 	if err != nil {
 		log.Fatal(err)
 	}
