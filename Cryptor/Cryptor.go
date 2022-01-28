@@ -69,6 +69,7 @@ func randclassid() string {
 }
 
 func VarNumberLength(min, max int) string {
+	time.Sleep(2 * time.Millisecond)
 	var r string
 	rand.Seed(time.Now().UnixNano())
 	num := rand.Intn(max-min) + min
@@ -79,7 +80,6 @@ func VarNumberLength(min, max int) string {
 
 func StagelessArrayGen(data []byte) string {
 	var fmtStr string
-	//var StrSlice []string
 	aSlice := data
 	fmtStr = strings.Repeat("%d, ", len(aSlice)-1)
 	fmtStr += "%d"

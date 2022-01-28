@@ -53,6 +53,7 @@ type macro struct {
 type sandbox struct {
 	Variables map[string]string
 }
+
 var buffer bytes.Buffer
 
 //First
@@ -71,7 +72,7 @@ func Java_Code_Buff(product string) (string, string, string, string, string, str
 	javacode.Variables["DecodedValue"] = Cryptor.VarNumberLength(4, 9)
 	javacode.Variables["shellcode"] = Cryptor.VarNumberLength(4, 9)
 	javacode.Variables["Auto_Open"] = Cryptor.VarNumberLength(4, 9)
-	
+
 	if product == "Excel" {
 		struct_option = Struct.Javacode_Start_Excel()
 	}
@@ -403,7 +404,7 @@ func XSL_Code_Buff(compiled string) string {
 	xsl.Variables = make(map[string]string)
 	xsl.Variables["payload"] = compiled
 	buffer.Reset()
-	xslTemplate, err := template.New("xsl").Parse(Struct.HTA_Loader())
+	xslTemplate, err := template.New("xsl").Parse(Struct.XSL_Loader())
 	if err != nil {
 		log.Fatal(err)
 	}

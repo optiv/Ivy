@@ -91,9 +91,11 @@ Their cries for mercy?
 	if opt.inputFile32 == "" && opt.inputFile64 == "" {
 		log.Fatal("Error: Please provide a path to a file containing a raw shellcode or  payload")
 	}
-
 	if opt.outFile == "" {
 		log.Fatal("Error: Please provide a name for the payload the you wish to generate")
+	}
+	if opt.CommandLoader == "" || opt.CommandLoader == "bits" || opt.CommandLoader == "hta" || opt.CommandLoader == "macro" || opt.CommandLoader == "xsl" {
+		log.Fatal("Error: Invalid delivery command option, please choose one of the acceptable options")
 	}
 	if opt.inputFile32 != "" && opt.stageless == false {
 		Utils.PrintDebug(debugging, "Reading payload file %s\n", opt.inputFile32)
