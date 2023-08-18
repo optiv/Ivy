@@ -1,3 +1,6 @@
+# THIS REPOSITORY HAS BEEN ARCHIVED
+
+To view the latest version of Ivy or to submit an issue, reference https://github.com/Tylous/Ivy.
 
 
 <h1 align="center">
