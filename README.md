@@ -31,7 +31,7 @@ Once this is done the loader will then spawn a hidden Excel process and load the
 
 <b>IMPORTANT</b>
 
-The target endpoint must have Microsoft Office installed and activated in order to run because Ivy relies on a abusing the programticatical access to the VBA environment of Microsoft office. 
+The target endpoint must have Microsoft Office installed and activated in order to run because Ivy relies on a abusing programmatic access to the VBA environment of Microsoft office. 
 
 ## EDR Unhook Mode
 
@@ -155,7 +155,7 @@ In addition, when generating a loader there are two payload types. The first, `I
 
 ### Injection Process
 
-With `Inject` mode Ivy will create a process in a suspended state to injection shellcode into. Depending on the on weither its a 32-bit or 64-bit system it will spawn a different process. Ivy comes with some default process names to spawn, however these can be chagned by using the `process32` or `process64` flags. When specifying the path ensure you use `\\` for the path.
+With `Inject` mode Ivy will create a process in a suspended state to injection shellcode into. Depending on the on whether its a 32-bit or 64-bit system it will spawn a different process. Ivy comes with some default process names to spawn, however these can be changed by using the `process32` or `process64` flags. When specifying the path ensure you use `\\` for the path.
 
 # Staged vs Stageless Shellcode
 
